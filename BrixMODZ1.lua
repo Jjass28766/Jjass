@@ -1265,7 +1265,7 @@ end
 
 function reload()
 local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x40435BC
+local py = 0x8FC2374
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002C40BCC0035FD6"}})
 gg.toast("NO RELOAD ACTIVATED")
 end
