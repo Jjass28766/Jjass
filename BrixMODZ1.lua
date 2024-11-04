@@ -400,8 +400,10 @@ e = gg.prompt({
 "• NO PARACHUTE",
 "• WALLHACK GLOW",
 "• NO SPREAD",
+"• FAST SCOPE",
 "◻️ ʙᴀᴄᴋ", 
 }, nil, {
+    "checkbox",
     "checkbox",
     "checkbox",
     "checkbox",
@@ -465,7 +467,8 @@ if e[27] == true then wallclimb() end
 if e[28] == true then parano() end
 if e[29] == true then wallhackglow() end
 if e[30] == true then spreadno() end
-if e[30] == true then home() end
+if e[31] == true then fastscope() end
+if e[32] == true then home() end
 end
 end
 
@@ -1546,7 +1549,14 @@ local py = 0x913A6C0
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035FD6"}})
 gg.toast("NO SPREAD ACTIVATED")
 end
-	
+
+function fastscope()
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x8FC0388
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002C40BCC0035FD6"}})
+gg.toast("FAST SCOPE ACTIVATED")
+end
+
 function A3() 
 
 q = gg.choice({
