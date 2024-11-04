@@ -1533,9 +1533,12 @@ gg.toast("NO PARACHUTE ACTIVATED")
 end
 
 function wallhackglow()
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x81B7858
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x81B7858
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h 1F 20 03 D5 E0 03 13 AA"}})
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x7B18098
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
 gg.toast("WALLHACK YELLOW/BLUE ACTIVATED")
 end
 	
