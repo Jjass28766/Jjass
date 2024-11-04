@@ -397,8 +397,11 @@ e = gg.prompt({
 "• POTATO GRAPHICS [IN-GAME]",
 "• STATIC HITBOX [IN-GAME]",
 "• WALL CLIMB [IN-GAME]",
+"• NO PARACHUTE",
 "◻️ ʙᴀᴄᴋ", 
 }, nil, {
+    "checkbox",
+    "checkbox",
     "checkbox",
     "checkbox",
     "checkbox",
@@ -456,7 +459,9 @@ if e[24] == true then frog() end
 if e[25] == true then potato() end
 if e[26] == true then static() end
 if e[27] == true then wallclimb() end
-if e[27] == true then home() end
+if e[28] == true then parano() end
+if e[29] == true then wallhackglow() end
+if e[30] == true then home() end
 end
 end
 
@@ -1519,6 +1524,20 @@ EPICSXZ = 4
 gg.toast("Wᴀʟʟ Cʟɪᴍʙ Aᴄᴛɪᴠᴀᴛᴇ")
 end
 
+function parano()
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x81BD4EC
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035FD6"}})
+gg.toast("NO PARACHUTE ACTIVATED")
+end
+
+function wallhackglow()
+so = gg.getRangesList('libunity.so')[1].start
+py = 0x81B7858
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h 1F 20 03 D5 E0 03 13 AA"}})
+gg.toast("WALLHACK YELLOW/BLUE ACTIVATED")
+end
+	
 function A3() 
 
 q = gg.choice({
