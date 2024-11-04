@@ -80,7 +80,7 @@ end
  lqdm = (lqdm + 967)/6 
  lqs = io.open('/storage/emulated/0/Android/.49623513_1_dll','r') 
  if lqs == nil then 
-   lqsa=gg.alert('Enter Your Key:','Yes','Exit') 
+   lqsa=gg.alert('CLICK THE YES!','Yes','Exit') 
    if lqsa ~= 1 then print('Wrong') os.exit() 
    else 
      lqv = gg.prompt({'Enter Key:','Your Phone Code: ' .. lqdm},{[1]='',[2]= lqdm },{[1] = 'text',[2] = 'text'}) 
