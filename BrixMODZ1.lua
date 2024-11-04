@@ -398,6 +398,7 @@ e = gg.prompt({
 "• STATIC HITBOX [IN-GAME]",
 "• WALL CLIMB [IN-GAME]",
 "• NO PARACHUTE",
+"• WALLHACK GLOW",
 "◻️ ʙᴀᴄᴋ", 
 }, nil, {
     "checkbox",
