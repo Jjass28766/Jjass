@@ -1084,18 +1084,12 @@ end
 
 
 function hb()
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x46602BC
-setValues(so + py, 32, "h 00 00 80 D2 C0 03 5F D6")
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x46602A4
-setValues(so + py, 32, "120")
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x46603E0
-setValues(so + py, 32, "h 00 00 80 D2 C0 03 5F D6")
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x46603E8
-setValues(so + py, 32, "120")
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x7BB235C
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002480D2C0035FD6"}})
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x7BB2174
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002480D2C0035FD6"}})
 gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ғʀᴀᴍᴇʀᴀᴛᴇ")
 end
 
