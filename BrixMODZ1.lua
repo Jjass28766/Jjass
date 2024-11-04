@@ -399,8 +399,10 @@ e = gg.prompt({
 "• WALL CLIMB [IN-GAME]",
 "• NO PARACHUTE",
 "• WALLHACK GLOW",
+"• NO SPREAD",
 "◻️ ʙᴀᴄᴋ", 
 }, nil, {
+    "checkbox",
     "checkbox",
     "checkbox",
     "checkbox",
@@ -462,6 +464,7 @@ if e[26] == true then static() end
 if e[27] == true then wallclimb() end
 if e[28] == true then parano() end
 if e[29] == true then wallhackglow() end
+if e[30] == true then spreadno() end
 if e[30] == true then home() end
 end
 end
@@ -1540,6 +1543,14 @@ local so = gg.getRangesList('libunity.so')[1].start
 local py = 0x7B18098
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
 gg.toast("WALLHACK YELLOW/BLUE ACTIVATED")
+end
+
+
+function spreadno()
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x913A6C0
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035FD6"}})
+gg.toast("NO SPREAD ACTIVATED")
 end
 	
 function A3() 
