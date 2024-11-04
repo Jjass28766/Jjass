@@ -1094,10 +1094,14 @@ end
 
 function aim()
 aimbot =gg.prompt({"ᴀɪᴍ ʟᴏᴄᴋ ᴀᴅᴊᴜsᴛ sᴇᴛᴛɪɴɢs [1; 1000000]"}, {[1] = data}, {[1] = "number"})
-unity = gg.getRangesList("libunity.so")[1].start
-setValues(unity + 0x7AED9F8, 4, "~A8 LDR S0, [PC,#0x8]")
-setValues(unity + 0x7AED9F8 + 0x4, 4, "~A8 RET")
-setValues(unity + 0x7AED9F88 + 0x8, 16, aimbot[1])
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x8FE4058, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
+setValues(unity + 0x8FE4058 + 4, 4, "~A8 RET")
+setValues(unity + 0x8FE4058 + 8, 16, aimbot[1])
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x7AED9F8, 4, "~A8 LDR S0, [PC,#0x8]") --AR, Smg, Lmg, Pistol
+setValues(unity + 0x7AED9F8 + 4, 4, "~A8 RET")
+setValues(unity + 0x7AED9F8 + 8, 16, aimbot[1])
 gg.setRanges(gg.REGION_ANONYMOUS)
 gg.setVisible(false)
 gg.searchNumber("7.00649232e-45F;0.69999998808F;0.69999998808F;0.69999998808F;0.69999998808F;7.00649232e-45F;0.5F;0.5F;0.5F;0.60000002384F;0.60000002384F", gg.TYPE_FLOAT)
@@ -1240,10 +1244,14 @@ end
 
 function aimlock()
 aimbot =gg.prompt({"ᴀɪᴍ ʟᴏᴄᴋ ᴀᴅᴊᴜsᴛ sᴇᴛᴛɪɴɢs [1; 1000000]"}, {[1] = data}, {[1] = "number"})
-unity = gg.getRangesList("libunity.so")[1].start
-setValues(unity + 0x7AED9F8, 4, "~A8 LDR S0, [PC,#0x8]")
-setValues(unity + 0x7AED9F8 + 0x4, 4, "~A8 RET")
-setValues(unity + 0x7AED9F88 + 0x8, 16, aimbot[1])
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x8FE4058, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
+setValues(unity + 0x8FE4058 + 4, 4, "~A8 RET")
+setValues(unity + 0x8FE4058 + 8, 16, aimbot[1])
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x7AED9F8, 4, "~A8 LDR S0, [PC,#0x8]") --AR, Smg, Lmg, Pistol
+setValues(unity + 0x7AED9F8 + 4, 4, "~A8 RET")
+setValues(unity + 0x7AED9F8 + 8, 16, aimbot[1])
 gg.setRanges(gg.REGION_ANONYMOUS)
 gg.setVisible(false)
 gg.searchNumber("7.00649232e-45F;0.69999998808F;0.69999998808F;0.69999998808F;0.69999998808F;7.00649232e-45F;0.5F;0.5F;0.5F;0.60000002384F;0.60000002384F", gg.TYPE_FLOAT)
