@@ -371,10 +371,6 @@ e = gg.prompt({
 "• POTATO GRAPHICS [IN-GAME]",
 "• STATIC HITBOX [IN-GAME]",
 "• WALL CLIMB [IN-GAME]",
-"• NO PARACHUTE",
-"• WALLHACK GLOW",
-"• NO SPREAD",
-"• FAST SCOPE",
 "◻️ ʙᴀᴄᴋ", 
 }, nil, {
     "checkbox",
